@@ -14,8 +14,14 @@ namespace CoreCodeCamp.Data
         {
             this.CreateMap<Camp, CampModel>()
             .ForMember(c => c.Venue, o => o.MapFrom(m => m.Location.VenueName)).ReverseMap();
-            //this.CreateMap < talk, talkmodel = "" > ();
-            //this.CreateMap < speaker, speakermodel = "" > ();
+
+
+            CreateMap<Talk, TalkModel>()
+                .ReverseMap();
+
+
+            CreateMap<Speaker, SpeakerModel>()
+                .ReverseMap();
         }
     }
 }
